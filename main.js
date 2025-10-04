@@ -1,24 +1,4 @@
-// console.log(1);
-// //async
-// setTimeout(() => {
-//   console.log(2);
-// }, 5000);
-
-// console.log(3);
-
-const myPromise = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log(2);
-      resolve("hehe");
-    }, 2000);
-  });
-};
-const test = myPromise();
-console.log("test", test);
-console.log("===========================");
-console.log("1");
-myPromise().then((data) => {
-  console.log("data", data);
-  console.log("3");
-});
+//fetch
+const temp = fetch("http://localhost:8000/users");
+// su dung fetch de lay du lieu tu json va ket hop voi promise de bien no danh data
+temp.then((res) => res.json()).then((data) => console.log(data));

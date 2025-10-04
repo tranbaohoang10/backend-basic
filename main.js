@@ -1,12 +1,12 @@
-const greeting = (name, callback) => {
-  console.log("Xin chao: ", name);
-  callback();
+//promise
+
+fetch("http://localhost:8000/users")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+// async/await
+const fetchData = async () => {
+  const res = await fetch("http://localhost:8000/users");
+  const data = await res.json();
+  console.log(data);
 };
-const hello = () => {
-  console.log("learn callback..");
-};
-const hi = () => {
-  console.log("say hi..");
-};
-greeting("Bao Hoang", hello);
-greeting("Bao Hoang", hi);
+fetchData();
